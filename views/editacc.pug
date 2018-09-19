@@ -1,0 +1,89 @@
+doctype html
+html
+    head
+        meta(charset='utf-8')
+        meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
+        meta(name='description', content='')
+        meta(name='author', content='')
+        title Register
+        //-  Bootstrap core CSS
+        link(rel="stylesheet" href="../assets/css/bootstrap.min.css")
+        //-  Custom styles for this template
+        link(href='../assets/css/floating-labels.css', rel='stylesheet')
+    body
+        //- form.needs-validation(method='POST' action='/register' novalidate)
+        //-     .text-center
+        //-         a(href="/")
+        //-         img.mb-4(src="../assets/img/logo.jpeg" alt="Hop Circles" width="300" height="140")
+        //-     .form-group
+        //-         label(for='email') Email
+        //-         input#regE.form-control(type='email', placeholder='Email', name = 'email',required , autofocus)
+        //-     .form-group
+        //-         label(for='user') Username
+        //-         input#regU.form-control(type='username', placeholder='Username', name ='user', required)
+        //-     .form-group
+        //-         label(for='pass') Password
+        //-         input#regP.form-control(type='password', placeholder='Password', name = 'pass', required)
+        //-         .invalid-feedback invalid
+        //-     .form-group
+        //-         label(for='passMatch') Confirm Password
+        //-         input#regP.form-control(type='password', placeholder='Password', name = 'passMatch', required)
+        //-     .checkbox.mb-1
+        //-         label
+        //-         input(type='checkbox', value='remember-me')
+        //-         |  Remember me
+        //-     button.btn.btn-lg.btn-block(style="background-color: #FFC946; color: white" type = 'submit') Sign up
+        //-     .row.text-center.mt-1
+        //-         .col-6
+        //-             a(href="#") 
+        //-                 h6 Forget password?
+        //-         .col-6
+        //-             a(href="/login")
+        //-                 h6 Sign in
+        //-     p.mt-1.text-muted.text-center 
+        //-         i  All rights reserved
+    form.needs-validation(novalidate='')
+        .form-row
+                label(for='validationCustomUsername') Username
+                .input-group
+                    .input-group-prepend
+                        span#inputGroupPrepend.input-group-text @
+                    input#validationCustomUsername.form-control(placeholder='Username', aria-describedby='inputGroupPrepend', required='', type='text')
+                    .invalid-feedback Please choose a username.
+        .form-row
+            .col-md-6.mb-3
+                label(for='validationCustom03') City
+                input#validationCustom03.form-control(placeholder='City', required='', type='text')
+                .invalid-feedback Please provide a valid city.
+            .col-md-3.mb-3
+                label(for='validationCustom04') State
+                input#validationCustom04.form-control(placeholder='State', required='', type='text')
+                .invalid-feedback Please provide a valid state.
+            .col-md-3.mb-3
+                label(for='validationCustom05') Zip
+                input#validationCustom05.form-control(placeholder='Zip', required='', type='text')
+                .invalid-feedback Please provide a valid zip.
+        .form-group
+            .form-check
+                input#invalidCheck.form-check-input(value='', required='', type='checkbox')
+                label.form-check-label(for='invalidCheck') Agree to terms and conditions
+                .invalid-feedback You must agree before submitting.
+        button.btn.btn-primary(type='submit') Submit form
+    script.
+        (function() {
+            'use strict';
+            window.addEventListener('load', function() {
+                var forms = document.getElementsByClassName('needs-validation');
+                    var validation = Array.prototype.filter.call(forms, function(form) {
+                        form.addEventListener('submit', function(event) {
+                        if (form.checkValidity() === false) {
+                            event.preventDefault();
+                            event.stopPropagation();
+                        }
+                        form.classList.add('was-validated');
+                    }, false);
+                });
+            }, false);
+        })();
+    script(src="../assets/js/jquery.js")
+    //- script(src="../assets/ajax/register.js")

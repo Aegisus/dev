@@ -1,0 +1,53 @@
+extends index.pug
+block vars
+    - var title='Edit profile'
+block content
+    .mt-5.container-fluid(style="width: 50%;")
+        //- h1 Read
+        //- button(id = "testbtnR") test read
+        //- student
+        h1 Edit account
+        //- #edit_form
+        //- form(id = 'edit' class="form-group")
+            input(type='text' id='update_skill' class="form-control")
+            input(type='text' id='update_prof' class="form-control")
+            button(id = 'editcfm') Confirm
+        //- form(id = 'edit' class="form-group")
+        //-     input(type='text' id='update_comdes' class="form-control")
+        //-     input(type='text' id='update_indus' class="form-control")
+        //-     input(type='text' id='update_serv' class="form-control")
+        //-     button(id = 'editcfm') Confirm
+        form.pt-3(method='POST' action='/editacc' enctype="multipart/form-data")
+            .form-group
+                label(for= 'photo') Profile Photo
+                input#photo.form-control-file(type='file' name='photo')
+            .form-group
+                label(for='fullname') Full Name
+                input#fullname.form-control(placeholder='Full name' type='text' name = 'fullname')
+            .form-group
+                label(for='dob') Date of Birth
+                input#dob.form-control(type='date' name = 'dob')
+            .form-group
+                label(for='studfront') Picture of Admin Card (front)
+                input#studfront.form-control-file(type='file' name='studfront')
+            .form-group
+                label(for='studback') Picture of Admin Card (back)
+                input#studback.form-control-file(type='file' name='studback')
+            .form-group
+                label(for='handphone') Handphone Number
+                input#handphone.form-control(placeholder='Handphone Number' type='text' name = 'handphone')
+            .form-group
+                label(for='polysemgrade') Screenshot of current poly semestral grade sheet
+                input#polysemgrade.form-control-file(type='file' name='grade')
+            .form-group
+                label(for='skillsets') Skillsets
+                input#skillsets.form-control(placeholder='Skillsets' type='text' name = 'skillsets')
+            .form-group
+                label(for='softprof') Software Proficency
+                input#softprof.form-control(placeholder='Software Proficency' type='text' name = 'softprof')
+            .text-center.mb-3
+                button.btn(type='submit' style='background-color: #FFC946;color: white;font-size: 17px;') Confirm
+
+
+
+

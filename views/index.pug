@@ -1,0 +1,155 @@
+doctype html
+html
+    block vars
+    head
+        title Hop Circles - #{title}
+        link(rel='shortcut icon' href='../assets/img/favicon.ico')
+        link(rel="stylesheet" href="/assets/css/bootstrap.min.css")
+        link(href='../assets/css/accounts.css', rel='stylesheet')
+        meta(name= "viewport" content="width=device-width, initial-scale=1")
+        style.
+            body{
+                font-family: Helvetica Neue, Helvetica, Arial, sans-serif; font-style: normal; font-variant: normal;
+                color: #4d4d4d;
+            }
+            .with-bg-size {
+                background-image: url('/assets/img/playground.jpeg');
+                width: 100%;
+                height: 500px;
+                background-position: center;
+                background-size: cover;
+            }
+            .with-bg-size2 {
+                background-image: url('/assets/img/bg2.jpg');
+                width: 100%;
+                height: 500px;
+                background-position: center;
+                background-size: cover;
+            }
+            #myBtn {
+                position: fixed;
+                bottom: 20px;
+                right: 30px;
+                height: 65px;
+                width: 65px;
+                z-index: 99;
+                font-size: 40px;
+                border: none;
+                outline: none;
+                background-color:  #FFC946;
+                color: white;
+                cursor: pointer;
+                border-radius: 50%;
+                text-align: center;
+            }
+            #myBtn:hover {
+                background-color: #555;
+            }
+            html{
+                font-size: 1rem;
+            }
+            @media (min-width: 576px){
+                html{
+                    font-size: 1.15rem;
+                }
+            }
+            @media (min-width: 768px){
+                html{
+                    font-size: 1.2rem;
+                }
+                nav.navbar{
+                    max-height: 100px;
+                    overflow: hidden;
+                }
+            }
+            @media (min-width: 992px){
+                html{
+                    font-size: 1.25rem;
+                }
+            }
+            @media (min-width: 1200px){
+                html{
+                    font-size: 1.3rem;
+                }
+            }
+    body
+        #projbtn
+        nav.navbar.sticky-top.navbar-light.bg-white.shadow
+            .navbar.navbar-expand-lg.navbar-light(class =".col-6 .col-lg-4")
+                a.navbar-brand(href="/index") 
+                    img(src="/assets/img/logo.jpeg" alt="Hop Circles" width="150" height="70")
+            #accnav.navbar.navbar-expand-lg.navbar-light
+                a.navbar-brand(href="/myprojects/projects" style="color: black;") MY PROJECTS
+                a.navbar-brand(href="/playground" style="color: black;") PLAYGROUND
+                a.navbar-brand(href="/hoppers" style="color: black;") HOPPERS
+                //- a.navbar-brand(href="#" style="color: #FFC946;") ACCOUNT
+        block content
+            .container-fluid.pl-5.pr-5
+                img(class="img-fluid" src="/assets/img/homeheader.jpg" alt="News" style="width: 100%")
+                .row(style="padding: 1em; padding-left: 7%")
+                    .col-6(style="max-width: 550px;padding: 1em;")
+                        h1 #[strong How to use]
+                        h1 #[strong hopcircles?]
+                        h5 Congrats! You've registered, now what? Here are some few pointers to get you started on your hopcircles.
+                        a.btn(href="#" style=" background-color: #FFC946;color: white;")
+                            .row(style="width: 100px; padding-left:40px;") -->
+                    .col-6(style="min-width: 250px")
+                        img(class="img-fluid" src="/assets/img/homehelper.jpg" alt="Help" style="width: 100%;min-width:100px;")
+                .row(style="padding: 1em;max-width: 550px")
+                    h1 #[strong In the loop:]
+                    h5 Stay up-to-date with industry insights
+                #loopfeed.row.pl-5.pl-5.ml-5
+                    //- .col-6
+                    //-     .card(style="min-width: 10rem;width: 60%; height: 60%;text-align: center;vertical-align: middle;background-color: #e8e8e8;outline-color: white")
+                    //-         img(class="card-img-top img-fluid" src="/assets/img/Stickman.png" alt="Stickman")
+                    //-         .card-body(style="background-color: #FFC946; color: white;")
+                    //-             .row
+                    //-                 .col-6
+                    //-                     span.card-title ARTICLE TITLE
+                    //-                 .col-6
+                    //-                     a.btn(href="#" style="background-color: white; color: #4d4d4d;") READ
+        //- block foot
+        section(id = 'footer' style ="background-color: #FFC946;")
+            .container
+                .row.text-center.text-xs-center.text-sm-left.text-md-left
+                    .col-xs-6.col-sm-4
+                        //- .col-xs-6
+                        ul.list-unstyled(style="padding-top: 20px")
+                            li 
+                                a.navbar-brand(href="#" style="color: white;") About Us
+                            li
+                                a.navbar-brand(href="#" style="color: white;") Contact
+                            li
+                                a.navbar-brand(href="#" style="color: white;") Terms & Conditions
+                    .col-xs-6.col-sm-4
+                        ul.list-unstyled
+                            li 
+                                a.navbar-brand(href="#" style="color: white;")
+                                    i.fa.fa-instagram Instagram
+                                    img(src="/assets/img/hciw.png" alt="Hop Circles" width="150" height="150")
+                                    i.fa.fa-facebook Facebook
+                    .col-xs-6.col-sm-4
+                        ul.list-unstyled
+                            li 
+                                a.navbar-brand(href="#" style="color: white;padding-top: 60px") hopcircles inc (c)
+        script(src="/assets/js/jquery.js")
+        script(src="/assets/ajax/createajax.js")
+        script(src="/assets/ajax/playajax.js")
+        script(src="/assets/ajax/loopajax.js")
+        script(src="/assets/ajax/hoppersajax.js")
+        script(src="/assets/ajax/playpostajax.js")
+        script(src="/assets/ajax/looppostajax.js")
+        script(src="/assets/ajax/accountsajax.js")
+        script(src="/assets/ajax/myprojectsajax.js")
+        script(src="/assets/ajax/indexajax.js")
+        script(src="/assets/js/popper.min.js")
+        script(src="/assets/js/offcanvas.js")
+
+
+
+
+
+
+
+
+    

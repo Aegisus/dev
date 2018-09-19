@@ -1,0 +1,69 @@
+doctype html
+html
+    head
+        meta(charset='utf-8')
+        meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
+        meta(name='description', content='')
+        meta(name='author', content='')
+        title Register
+        //-  Bootstrap core CSS
+        link(rel="stylesheet" href="../assets/css/bootstrap.min.css")
+        //-  Custom styles for this template
+        link(href='../assets/css/floating-labels.css', rel='stylesheet')
+    body
+        //- form.needs-validation(method='POST' action='/register' novalidate)
+        //-     .text-center
+        //-         a(href="/")
+        //-         img.mb-4(src="../assets/img/logo.jpeg" alt="Hop Circles" width="300" height="140")
+        //-     .form-group
+        //-         label(for='email') Email
+        //-         input#regE.form-control(type='email', placeholder='Email', name = 'email',required , autofocus)
+        //-     .form-group
+        //-         label(for='user') Username
+        //-         input#regU.form-control(type='username', placeholder='Username', name ='user', required)
+        //-     .form-group
+        //-         label(for='pass') Password
+        //-         input#regP.form-control(type='password', placeholder='Password', name = 'pass', required)
+        //-         .invalid-feedback invalid
+        //-     .form-group
+        //-         label(for='passMatch') Confirm Password
+        //-         input#regP.form-control(type='password', placeholder='Password', name = 'passMatch', required)
+        //-     .checkbox.mb-1
+        //-         label
+        //-         input(type='checkbox', value='remember-me')
+        //-         |  Remember me
+        //-     button.btn.btn-lg.btn-block(style="background-color: #FFC946; color: white" type = 'submit') Sign up
+        //-     .row.text-center.mt-1
+        //-         .col-6
+        //-             a(href="#") 
+        //-                 h6 Forget password?
+        //-         .col-6
+        //-             a(href="/login")
+        //-                 h6 Sign in
+        //-     p.mt-1.text-muted.text-center 
+        //-         i  All rights reserved
+    form(style='max-height: 600px' method='POST' action='/register')
+        .text-center(style='height:120px')
+            img(src="../assets/img/logo.jpeg" alt="Hop Circles" width="250" height="120")
+        .form-group
+            label(for='valid_email') text
+            input#thistext.form-control(placeholder='enter text', required='', type='text', name='sometext')
+            #thistext_feed.invalid-feedback
+    script.
+        (function() {
+            'use strict';
+            window.addEventListener('load', function() {
+                var forms = document.getElementsByClassName('needs-validation');
+                    var validation = Array.prototype.filter.call(forms, function(form) {
+                        form.addEventListener('submit', function(event) {
+                        if (form.checkValidity() === false) {
+                            event.preventDefault();
+                            event.stopPropagation();
+                        }
+                        form.classList.add('was-validated');
+                    }, false);
+                });
+            }, false);
+        })();
+    script(src="../assets/js/jquery.js")
+    script(src="../assets/ajax/register.js")

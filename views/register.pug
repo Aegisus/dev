@@ -1,0 +1,150 @@
+doctype html
+html
+    head
+        meta(charset='utf-8')
+        meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
+        meta(name='description', content='')
+        meta(name='author', content='')
+        title Register
+        //-  Bootstrap core CSS
+        link(rel="stylesheet" href="../assets/css/bootstrap.min.css")
+        //-  Custom styles for this template
+        link(href='../assets/css/floating-labels.css', rel='stylesheet')
+    body
+        //- form.needs-validation(method='POST' action='/register' novalidate)
+        //-     .text-center
+        //-         a(href="/")
+        //-         img.mb-4(src="../assets/img/logo.jpeg" alt="Hop Circles" width="300" height="140")
+        //-     .form-group
+        //-         label(for='email') Email
+        //-         input#regE.form-control(type='email', placeholder='Email', name = 'email',required , autofocus)
+        //-     .form-group
+        //-         label(for='user') Username
+        //-         input#regU.form-control(type='username', placeholder='Username', name ='user', required)
+        //-     .form-group
+        //-         label(for='pass') Password
+        //-         input#regP.form-control(type='password', placeholder='Password', name = 'pass', required)
+        //-         .invalid-feedback invalid
+        //-     .form-group
+        //-         label(for='passMatch') Confirm Password
+        //-         input#regP.form-control(type='password', placeholder='Password', name = 'passMatch', required)
+        //-     .checkbox.mb-1
+        //-         label
+        //-         input(type='checkbox', value='remember-me')
+        //-         |  Remember me
+        //-     button.btn.btn-lg.btn-block(style="background-color: #FFC946; color: white" type = 'submit') Sign up
+        //-     .row.text-center.mt-1
+        //-         .col-6
+        //-             a(href="#") 
+        //-                 h6 Forget password?
+        //-         .col-6
+        //-             a(href="/login")
+        //-                 h6 Sign in
+        //-     p.mt-1.text-muted.text-center 
+        //-         i  All rights reserved
+    form#regisform(style='max-height: 600px;' method='POST' action='/register')
+        .text-center(style='height:120px')
+            img(src="../assets/img/logo.jpeg" alt="Hop Circles" width="250" height="120")
+        .form-group
+            label(for='valid_email') Email
+            input#valid_email.form-control(placeholder='Email', required='', type='Email', name='remail')
+            #email_feed.invalid-feedback(style="max-width: 250px")
+        .form-group
+            label(for='valid_username') Username
+            input#valid_username.form-control(placeholder='Username', required='', type='text', name='ruser')
+            #user_feed.invalid-feedback(style="max-width: 250px")
+        .form-group
+            label(for='valid_password') Password
+            input#valid_password.form-control(placeholder='Password', required='', type='password', name='rpass')
+            #pass_feed.invalid-feedback(style="max-width: 250px")
+        .form-group
+            label(for='valid_password') Confirm Password
+            input#valid_password.form-control(placeholder='Password', required='', type='password', name='re_pass')
+            #repass_feed.invalid-feedback(style="max-width: 250px")
+        .form-group.mt-1
+            .form-check
+                input#terms_check.form-check-input(value='', required='', type='checkbox')
+                label.form-check-label(for='terms_check') Agree to terms and conditions
+                .invalid-feedback You must agree before submitting.
+        .form-group
+            .form-check
+                input.form-check-input(value='', type='checkbox')
+                label Remember me
+        .text-center
+            button#register.btn(type='submit' style='background-color: #FFC946;color: white') Hop on!
+        p.mt-2.text-muted.text-center
+                i  All rights reserved
+    
+    script(src="../assets/js/jquery.js")
+    script.
+        $(document).ready(function(){		
+            var errlist = [];
+            var errors = !{errors}
+            //- console.log(errors);
+            if (errors){
+                errors.forEach((result)=>{
+                    //- console.log(result.msg);
+                    if (result.msg == 'Email address must be between 4-100 characters long.'){
+                        errlist[0] = result.msg;
+                    }
+                    if (result.msg == 'Username must be between 8-15 characters long.'){
+                        errlist[1] = result.msg;
+                    }
+                    if (result.msg == 'Password must be between 8-100 characters long.'){
+                        errlist[2] = result.msg;
+                    }
+                    if (result.msg == 'Password must include one lowercase character, one uppercase character, a number, and a special character.'){
+                        errlist[3] = result.msg;
+                    }
+                    if (result.msg == 'Passwords do not match, please try again.'){
+                        errlist[4] = result.msg;
+                    }
+                });
+                //- for (var i = 0; i < errlist.length; i++){
+                //-     console.log(errlist[i]);
+                //- }
+                var email_feed = $("#email_feed");
+                email_feed.html = "";
+                var user_feed = $("#user_feed");
+                user_feed.html = "";
+                var pass_feed = $("#pass_feed");
+                pass_feed.html = "";
+                var repass_feed = $("#repass_feed");
+                repass_feed.html = "";
+                if (errlist[0]){
+                    //- console.log(errlist[0]);
+                    email_feed.append("<p>" +errlist[0] + "</p>");
+                }
+                if (errlist[1]){
+                    //- console.log(errlist[1]);
+                    user_feed.append("<p>" +errlist[1] + "</p>");
+                }
+                if (errlist[2]) {
+                    //- console.log(errlist[2]);
+                    pass_feed.append("<p>" +errlist[2] + "</p>");
+                }
+                if (errlist[3]){
+                    //- console.log(errlist[3]);
+                    pass_feed.append("<p>" + errlist[3] + "</p>");
+                }
+                if (errlist[4]){
+                    //- console.log(errlist[4]);
+                    repass_feed.append("<p>" +errlist[4] + "</p>");
+                }
+
+                $("#regisform").addClass( "was-validated" );	
+            }	
+        });
+        //- (function() {
+        //-         var forms = document.getElementsByClassName('needs-validation');
+        //-             var validation = Array.prototype.filter.call(forms, function(form) {
+        //-                 form.addEventListener('submit', function(event) {
+        //-                 if (form.checkValidity() === false) {
+        //-                     event.preventDefault();
+        //-                     event.stopPropagation();
+        //-                 }
+        //-                 form.classList.add('was-validated');
+        //-             }, false);
+        //-         });
+        //- })();
+    //- script(src="../assets/ajax/register.js")

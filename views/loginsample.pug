@@ -1,0 +1,36 @@
+doctype html
+html
+    head
+        meta(charset='utf-8')
+        meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
+        meta(name='description', content='')
+        meta(name='author', content='')
+        title Login
+        link(rel="stylesheet" href="../assets/css/bootstrap.min.css")
+        link(href='../assets/css/floating-labels.css', rel='stylesheet')
+    body
+        form.form-signin.form-group
+            .text-center.mb-4
+                a(href="/")
+                img.mb-4(src="../assets/img/logo.jpeg" alt="Hop Circles" width="300" height="140")
+            .form-label-group
+                input#regU.form-control(type='username', placeholder='Username', required)
+                label.sr-only(for='inputUsername') Username
+            .form-label-group
+                input#regP.form-control(type='password', placeholder='Password', required)
+                label.sr-only(for='inputPassword') Password
+            .checkbox.mb-3
+                label
+                input(type='checkbox', value='remember-me')
+                |  Remember me
+            button.btn.btn-lg.btn-block(style="background-color: #FFC946; color: white" id='login') Login
+            .row.text-center.mt-2
+                .col-6
+                    a(href="#") 
+                        h6 Forget password?
+                .col-6
+                    a(href="/login")
+                        h6 Sign in
+            p.mt-5.mb-3.text-muted.text-center © 2017-2018
+    script(src="../assets/js/jquery.js")
+    script(src="../assets/ajax/loginsampleajax.js")

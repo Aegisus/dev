@@ -1,0 +1,27 @@
+#floatingbtn{
+    height: 55px;
+    width: 55px;
+    background-color: #ffca0c;
+    box-shadow: 3px 3px 1px rgba(0,0,0,.2);
+    border-radius: 50%;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+#floatingbtn:hover{
+    cursor: pointer;
+}
+
+#c1{
+    height: 5px;
+    width: 5px;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 60%;
+    left: 49%;
+    transform: translate(-50%,-50%);
+    z-index: 99;
+}

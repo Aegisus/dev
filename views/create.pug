@@ -1,0 +1,25 @@
+extends index.pug
+block vars
+    - var title='Create Project'
+block content
+    .mt-5.container-fluid(style="width: 80%;")
+        //- h1 Read
+        //- button(id = "testbtnR") test read
+        h1 Create Post
+        form(id = 'create-form' class="form-group")
+            input(type='text' id='create-title' class="form-control")
+            input(type='text' id='create-des' class="form-control") 
+            input(type='text' id='create-del' class="form-control") 
+            input(type='text' id='create-price' class="form-control") 
+            button(id = 'submitbtn') test post
+        //- h1 Update
+        //- form(id = 'update-form' class="form-group")
+        //-     input(type='text' id='update-id' class="form-control")
+        //-     input(type='text' id='update-title' class="form-control")
+        //-     input(type='text' id='update-subtitle' class="form-control")
+        //-     input(type='text' id='update-des' class="form-control")
+        //-     button(id = 'updatebtn') test put
+        //- h1 Delete
+        //- form(id = 'delete-form' class="form-group")
+        //-     input(type='text' id='delete-id' class="form-control")
+        //-     button(id = 'deletebtn') test delete

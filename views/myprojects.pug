@@ -1,0 +1,14 @@
+extends index.pug
+block vars
+    - var title='My Projects'
+block content
+    .container-fluid(style="padding-left:38%; padding-top:15%;min-height: 453px")
+        h1.text-muted Coming soon...
+        //- .rectangle.m-5(style="background-color: #FFC946; width: 80%")
+        //-     .row.p-3(style="text-align: center")
+        //-         .col-6
+        //-             a.navbar-brand(href="/myprojects/projects" style="color: white") Projects
+        //-         .col-6
+        //-             a.navbar-brand(href="/myprojects/inbox" style="color: white") Inbox
+        block current-inbox
+        
